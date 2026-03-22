@@ -297,14 +297,13 @@ def fetch_and_build():
             }
         }
 
-        // Iniciar el tema comprobando localStorage o las preferencias del sistema
+        // Iniciar el tema comprobando localStorage
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'dark') {
             body.classList.add('dark-mode');
             updateIcons(true);
-        } else if (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            body.classList.add('dark-mode');
-            updateIcons(true);
+        } else {
+            updateIcons(false);
         }
 
         themeToggle.addEventListener('click', () => {
