@@ -302,6 +302,24 @@ td:nth-child(2) {
     background: #e09b3d;
 }
 
+/* Food Tags for Musgorlax */
+.food-tag {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 6px;
+    font-size: 0.85em;
+    font-weight: 600;
+    background-color: #eef5e9;
+    color: #4a7c59;
+    border: 1px solid #cce0d2;
+    margin-right: 5px;
+}
+body.dark-mode .food-tag {
+    background-color: #3b4d42;
+    color: #a8d5b5;
+    border-color: #4a6654;
+}
+
 /* Lightbox Modal */
 .habitat-img {
     cursor: zoom-in;
@@ -503,6 +521,67 @@ td:nth-child(2) {
     }
     
     .pokemon-list {
+        justify-content: flex-end;
+    }
+}
+
+/* Dream Islands Styles */
+.item-with-icon {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.item-icon-small {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    border-radius: var(--border-radius-sm);
+    background: var(--item-bg);
+    padding: 4px;
+    border: 1px solid var(--table-border);
+    transition: transform 0.2s ease;
+}
+
+.item-icon-small:hover {
+    transform: scale(1.1);
+}
+
+.item-icon-xs {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    vertical-align: middle;
+    margin-right: 8px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.material-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.material-list li {
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+/* Mobile adjustments for Dream Islands */
+@media screen and (max-width: 768px) {
+    .item-with-icon {
+        justify-content: flex-end;
+        text-align: right;
+    }
+    .material-list {
+        align-items: flex-end;
+    }
+    .material-list li {
         justify-content: flex-end;
     }
 }
